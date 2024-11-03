@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --foreground-rgb: 255, 255, 255;
+    --background-rgb: 17, 24, 39;
+}
+
+html {
+    font-family: var(--font-quicksand), sans-serif;
+}
+
+body {
+    font-family: var(--font-quicksand), sans-serif;
+    color: rgb(var(--foreground-rgb));
+    background: rgb(var(--background-rgb));
+}
+
+.rdp {
+    --rdp-cell-size: 40px;
+    --rdp-accent-color: #3b82f6;
+    --rdp-background-color: #111827;
+    --rdp-accent-color-dark: #2563eb;
+    --rdp-background-color-dark: #111827;
+    --rdp-outline: 2px solid var(--rdp-accent-color);
+    --rdp-outline-selected: 2px solid var(--rdp-accent-color);
+    margin: 0;
+}
+
+.rdp-months {
+    @apply bg-gray-900 p-4 rounded-lg;
+}
+
+.rdp-month {
+    @apply bg-gray-900;
+}
+
+.rdp-day {
+    @apply rounded-lg transition-all duration-200 text-gray-200;
+}
+
+.rdp-day_disabled {
+    @apply text-gray-600;
+}
+
+.rdp-day:hover:not([disabled]) {
+    @apply bg-gray-800 text-white;
+}
+
+.rdp-day_selected {
+    @apply bg-blue-500 text-white;
+}
+
+.rdp-day_selected:hover {
+    @apply bg-blue-600;
+}
+
+@layer base {
+    body {
+        @apply bg-background text-white;
+    }
+}
+
+@layer components {
+    .optimization-grid {
+        @apply grid grid-cols-3 gap-4;
+    }
+}
