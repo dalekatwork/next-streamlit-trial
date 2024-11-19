@@ -1,0 +1,203 @@
+{
+  "labels": {
+    "navigation": {
+      "back": "Warehouses"
+    },
+    "title": "Warehouse Utilization",
+    "chart": {
+      "title": "Utilization Over Time",
+      "warehouses": {
+        "analytics": "Analytics Platform WH",
+        "marketplace": "Marketplace WH",
+        "fulfillment": "Fulfillment WH",
+        "order": "Order Management WH"
+      }
+    },
+    "actionables": {
+      "title": "Actionables",
+      "columns": {
+        "warehouse": "Warehouse",
+        "utilization": "Avg. Utilization",
+        "action": "Action",
+        "impact": "Impact",
+        "savings": "Saving Potential"
+      }
+    },
+    "optimizations": {
+      "title": "Optimizations",
+      "affected": "Affected Workloads:",
+      "visualizations": "Visualizations",
+      "pipelines": "Pipelines",
+      "and": "and",
+      "columns": {
+        "pipeline": "Pipeline",
+        "warehouse": "Warehouse",
+        "action": "Action"
+      },
+      "actions": {
+        "raise": "Raise PR"
+      }
+    }
+  },
+  "data": {
+    "utilization": [
+      {
+        "date": "2024-04-28",
+        "analytics": 65,
+        "marketplace": 55,
+        "fulfillment": 45,
+        "order": 35
+      },
+      {
+        "date": "2024-04-29",
+        "analytics": 70,
+        "marketplace": 60,
+        "fulfillment": 80,
+        "order": 45
+      },
+      {
+        "date": "2024-04-30",
+        "analytics": 60,
+        "marketplace": 50,
+        "fulfillment": 70,
+        "order": 90
+      },
+      {
+        "date": "2024-05-01",
+        "analytics": 55,
+        "marketplace": 45,
+        "fulfillment": 35,
+        "order": 25
+      },
+      {
+        "date": "2024-05-02",
+        "analytics": 45,
+        "marketplace": 35,
+        "fulfillment": 25,
+        "order": 85
+      },
+      {
+        "date": "2024-05-03",
+        "analytics": 50,
+        "marketplace": 40,
+        "fulfillment": 90,
+        "order": 35
+      },
+      {
+        "date": "2024-05-04",
+        "analytics": 65,
+        "marketplace": 45,
+        "fulfillment": 75,
+        "order": 55
+      },
+      {
+        "date": "2024-05-05",
+        "analytics": 40,
+        "marketplace": 80,
+        "fulfillment": 60,
+        "order": 25
+      },
+      {
+        "date": "2024-05-06",
+        "analytics": 55,
+        "marketplace": 45,
+        "fulfillment": 35,
+        "order": 55
+      },
+      {
+        "date": "2024-05-07",
+        "analytics": 70,
+        "marketplace": 30,
+        "fulfillment": 85,
+        "order": 45
+      },
+      {
+        "date": "2024-05-08",
+        "analytics": 75,
+        "marketplace": 45,
+        "fulfillment": 65,
+        "order": 35
+      },
+      {
+        "date": "2024-05-09",
+        "analytics": 60,
+        "marketplace": 55,
+        "fulfillment": 75,
+        "order": 25
+      },
+      {
+        "date": "2024-05-10",
+        "analytics": 50,
+        "marketplace": 45,
+        "fulfillment": 85,
+        "order": 35
+      },
+      {
+        "date": "2024-05-11",
+        "analytics": 45,
+        "marketplace": 35,
+        "fulfillment": 65,
+        "order": 35
+      },
+      {
+        "date": "2024-05-12",
+        "analytics": 55,
+        "marketplace": 45,
+        "fulfillment": 55,
+        "order": 25
+      },
+      {
+        "date": "2024-05-13",
+        "analytics": 65,
+        "marketplace": 55,
+        "fulfillment": 45,
+        "order": 35
+      }
+    ],
+    "actionables": [
+      {
+        "warehouse": "Order Management WH",
+        "utilization": 51.1,
+        "actions": [
+          "Downsize from X-Large to Small",
+          "Use single cluster instead of multi-cluster configuration"
+        ],
+        "impacts": [
+          "Warehouse can execute more queries with reduced idle time",
+          "Downsized warehouse will cost 12% lesser"
+        ],
+        "savingPotential": 1700
+      },
+      {
+        "warehouse": "Marketplace WH",
+        "utilization": 47.6,
+        "actions": [
+          "Downsize from 2X-Large to Medium",
+          "Increase MAX_CONCURRENCY_LEVEL to 14",
+          "Set AUTO_SUSPEND=300"
+        ],
+        "impacts": [
+          "Warehouse can execute more queries with reduced idle time",
+          "Downsized warehouse will cost 12% lesser"
+        ],
+        "savingPotential": 2079
+      }
+    ],
+    "optimizations": {
+      "visualizations": 13,
+      "pipelines": 9,
+      "items": [
+        {
+          "pipeline": "Daily Invoice Recognition",
+          "warehouse": "Order Management",
+          "action": "raise"
+        },
+        {
+          "pipeline": "Vendor Review Updates",
+          "warehouse": "Marketplace",
+          "action": "raise"
+        }
+      ]
+    }
+  }
+}

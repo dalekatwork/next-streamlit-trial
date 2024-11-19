@@ -1,0 +1,67 @@
+{
+  "header": {
+    "title": "SnowWise",
+    "navigation": {
+      "warehouses": "Warehouses",
+      "queries": "Queries"
+    }
+  },
+  "overview": {
+    "warehouses": {
+      "title": "Warehouses",
+      "variant": "indigo"
+    },
+    "utilization": {
+      "title": "Utilization",
+      "variant": "purple"
+    },
+    "totalCost": {
+      "title": "Total Cost",
+      "variant": "teal"
+    },
+    "savingPotential": {
+      "title": "Saving Potential",
+      "variant": "rose"
+    }
+  },
+  "optimizations": {
+    "title": "Optimizations",
+    "severity": {
+      "critical": {
+        "label": "Critical",
+        "color": "rgb(244,63,94)"
+      },
+      "medium": {
+        "label": "Medium",
+        "color": "rgb(59,130,246)"
+      },
+      "low": {
+        "label": "Low",
+        "color": "rgb(16,185,129)"
+      }
+    },
+    "metrics": {
+      "actionables": "Actionables",
+      "savingPotential": "Saving Potential"
+    }
+  },
+  "tables": {
+    "workloads": {
+      "title": "Expensive Workloads",
+      "columns": {
+        "workload": "Workload",
+        "type": "Type",
+        "cost": "Cost",
+        "successRate": "Success Rate"
+      },
+      "successLabel": "Success"
+    },
+    "teams": {
+      "title": "Expensive Teams",
+      "columns": {
+        "team": "Team",
+        "cost": "Cost"
+      }
+    }
+  }
+}
