@@ -2,11 +2,11 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
-    "./node_modules/@tremor/**/*.{js,ts,jsx,tsx}",
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
+    './node_modules/@tremor/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     container: {
@@ -16,42 +16,8 @@ module.exports = {
         "2xl": "1400px",
       },
     },
-    transparent: "transparent",
-    current: "currentColor",
     extend: {
-      fontFamily: {
-        sans: ["var(--font-quicksand)"],
-      },
       colors: {
-        tremor: {
-          brand: {
-            faint: "rgb(49 46 129 / 0.1)",
-            muted: "rgb(49 46 129 / 0.5)",
-            subtle: "rgb(49 46 129 / 0.8)",
-            DEFAULT: "rgb(49 46 129)",
-            emphasis: "rgb(49 46 129)",
-            inverted: "rgb(255 255 255)",
-          },
-          background: {
-            muted: "rgb(247 248 251)",
-            subtle: "rgb(249 250 253)",
-            DEFAULT: "rgb(255 255 255)",
-            emphasis: "rgb(255 255 255)",
-          },
-          border: {
-            DEFAULT: "rgb(229 231 236)",
-          },
-          ring: {
-            DEFAULT: "rgb(229 231 236)",
-          },
-          content: {
-            subtle: "rgb(102 112 133)",
-            DEFAULT: "rgb(10 11 13)",
-            emphasis: "rgb(0 0 0)",
-            strong: "rgb(0 0 0)",
-            inverted: "rgb(255 255 255)",
-          },
-        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -64,10 +30,6 @@ module.exports = {
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
         },
         muted: {
           DEFAULT: "hsl(var(--muted))",
@@ -84,18 +46,6 @@ module.exports = {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
-        },
-        success: {
-          DEFAULT: "hsl(var(--success))",
-          foreground: "hsl(var(--success-foreground))",
-        },
-        warning: {
-          DEFAULT: "hsl(var(--warning))",
-          foreground: "hsl(var(--warning-foreground))",
-        },
-        critical: {
-          DEFAULT: "hsl(var(--critical))",
-          foreground: "hsl(var(--critical-foreground))",
         },
       },
       borderRadius: {
@@ -119,34 +69,5 @@ module.exports = {
       },
     },
   },
-  safelist: [
-    {
-      pattern:
-        /^(bg-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
-      variants: ["hover", "ui-selected"],
-    },
-    {
-      pattern:
-        /^(text-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
-      variants: ["hover", "ui-selected"],
-    },
-    {
-      pattern:
-        /^(border-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
-      variants: ["hover", "ui-selected"],
-    },
-    {
-      pattern:
-        /^(ring-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
-    },
-    {
-      pattern:
-        /^(stroke-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
-    },
-    {
-      pattern:
-        /^(fill-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
-    },
-  ],
   plugins: [require("tailwindcss-animate")],
-};
+}

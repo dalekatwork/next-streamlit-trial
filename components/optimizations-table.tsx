@@ -9,25 +9,11 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { Button } from "@/components/ui/button"
-
-interface Optimization {
-  pipeline: string
-  warehouse: string
-  action: "raise"
-}
+import type { Optimization, OptimizationLabels } from "@/types/optimizations"
 
 interface OptimizationsTableProps {
-  data: Optimization[]
-  labels: {
-    columns: {
-      pipeline: string
-      warehouse: string
-      action: string
-    }
-    actions: {
-      raise: string
-    }
-  }
+  data: Optimization[];
+  labels: OptimizationLabels;
 }
 
 export function OptimizationsTable({ data, labels }: OptimizationsTableProps) {

@@ -8,20 +8,11 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-
-interface TeamCostData {
-  team: string
-  cost: number
-}
+import type { TeamCostData, TeamCostLabels } from "@/types/tables"
 
 interface TeamCostTableProps {
-  data: TeamCostData[]
-  labels: {
-    columns: {
-      team: string
-      cost: string
-    }
-  }
+  data: TeamCostData[];
+  labels: TeamCostLabels;
 }
 
 export function TeamCostTable({ data, labels }: TeamCostTableProps) {

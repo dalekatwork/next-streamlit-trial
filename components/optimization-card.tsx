@@ -1,11 +1,12 @@
 "use client"
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { SeverityType } from "@/types/dashboard"
 import dashboard from "@/data/dashboard.json"
 
 interface OptimizationCardProps {
   title: string
-  severity: "Critical" | "Medium" | "Low"
+  severity: SeverityType
   actionables: number
   savingPotential: number
 }
@@ -16,7 +17,7 @@ export function OptimizationCard({
   actionables, 
   savingPotential 
 }: OptimizationCardProps) {
-  const severityKey = severity.toLowerCase() as keyof typeof dashboard.labels.optimizations.severity
+  const severityKey = severity.toLowerCase() as Lowercase<SeverityType>
   const severityData = dashboard.labels.optimizations.severity[severityKey]
   const { metrics } = dashboard.labels.optimizations
 

@@ -6,37 +6,61 @@ import { TableUsageTable } from "@/components/table-usage-table"
 import { TeamCostTable } from "@/components/team-cost-table"
 import { OverviewCard } from "@/components/overview-card"
 import dashboard from "@/data/dashboard.json"
+import { CardVariant, SeverityType } from "@/types/dashboard"
 
 export default function Queries() {
   const { labels, data } = dashboard
+
+  const overviewCards = [
+    {
+      href: undefined,
+      title: labels.queries.overview.totalQueries,
+      value: data.queries.overview.totalQueries.toLocaleString(),
+      variant: "indigo" as CardVariant
+    },
+    {
+      href: undefined,
+      title: labels.queries.overview.avgQueueTime,
+      value: data.queries.overview.avgQueueTime,
+      variant: "purple" as CardVariant
+    },
+    {
+      href: "/queries/failures",
+      title: labels.queries.overview.failures,
+      value: data.queries.overview.failures.toLocaleString(),
+      variant: "teal" as CardVariant
+    },
+    {
+      href: undefined,
+      title: labels.queries.overview.savingPotential,
+      value: `$${data.queries.overview.savingPotential.toLocaleString()}`,
+      variant: "rose" as CardVariant
+    }
+  ]
 
   return (
     <div className="container py-8 space-y-8">
       <div>
         <h2 className="text-xl font-semibold mb-6">{labels.queries.overview.title}</h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <OverviewCard 
-            title={labels.queries.overview.totalQueries}
-            value={data.queries.overview.totalQueries.toLocaleString()}
-            variant="indigo"
-          />
-          <OverviewCard 
-            title={labels.queries.overview.avgQueueTime}
-            value={data.queries.overview.avgQueueTime}
-            variant="purple"
-          />
-          <Link href="/queries/failures">
-            <OverviewCard 
-              title={labels.queries.overview.failures}
-              value={data.queries.overview.failures.toLocaleString()}
-              variant="teal"
-            />
-          </Link>
-          <OverviewCard 
-            title={labels.queries.overview.savingPotential}
-            value={`$${data.queries.overview.savingPotential.toLocaleString()}`}
-            variant="rose"
-          />
+          {overviewCards.map((card, index) => (
+            card.href ? (
+              <Link key={index} href={card.href}>
+                <OverviewCard 
+                  title={card.title}
+                  value={card.value}
+                  variant={card.variant}
+                />
+              </Link>
+            ) : (
+              <OverviewCard 
+                key={index}
+                title={card.title}
+                value={card.value}
+                variant={card.variant}
+              />
+            )
+          ))}
         </div>
       </div>
 
@@ -53,7 +77,7 @@ export default function Queries() {
             >
               <QueryOptimizationCard
                 title={opt.title}
-                severity={opt.severity}
+                severity={opt.severity as SeverityType}
                 actionables={opt.actionables}
                 savingPotential={opt.savingPotential}
               />

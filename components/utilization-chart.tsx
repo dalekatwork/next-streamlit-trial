@@ -1,38 +1,38 @@
-"use client";
+"use client"
 
-import { Card } from "@tremor/react";
-import { BarChart } from "@tremor/react";
-import { format, parseISO } from "date-fns";
-import dashboard from "@/data/dashboard.json";
+import { Card } from "@tremor/react"
+import { BarChart } from "@tremor/react"
+import { format, parseISO } from "date-fns"
+import dashboard from "@/data/dashboard.json"
 
 interface UtilizationData {
-  date: string;
-  analytics: number;
-  marketplace: number;
-  fulfillment: number;
-  order: number;
+  date: string
+  analytics: number
+  marketplace: number
+  fulfillment: number
+  order: number
 }
 
 interface UtilizationChartProps {
-  data: UtilizationData[];
+  data: UtilizationData[]
 }
 
 export function UtilizationChart({ data }: UtilizationChartProps) {
-  const { labels } = dashboard;
-  const formattedData = data.map((item) => ({
+  const { labels } = dashboard
+  const formattedData = data.map(item => ({
     date: format(parseISO(item.date), "MMM dd, yyyy"),
     [labels.warehouses.chart.warehouses.analytics]: item.analytics,
     [labels.warehouses.chart.warehouses.marketplace]: item.marketplace,
     [labels.warehouses.chart.warehouses.fulfillment]: item.fulfillment,
-    [labels.warehouses.chart.warehouses.order]: item.order,
-  }));
+    [labels.warehouses.chart.warehouses.order]: item.order
+  }))
 
   const categories = [
     labels.warehouses.chart.warehouses.analytics,
     labels.warehouses.chart.warehouses.marketplace,
     labels.warehouses.chart.warehouses.fulfillment,
-    labels.warehouses.chart.warehouses.order,
-  ];
+    labels.warehouses.chart.warehouses.order
+  ]
 
   return (
     <Card className="bg-card border-border">
@@ -51,5 +51,5 @@ export function UtilizationChart({ data }: UtilizationChartProps) {
         yAxisWidth={48}
       />
     </Card>
-  );
+  )
 }

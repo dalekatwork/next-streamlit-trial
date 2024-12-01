@@ -2,12 +2,20 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
+import { CardVariant } from "@/types/dashboard"
 
 interface OverviewCardProps {
   title: string
   value: string | number
-  variant?: "indigo" | "purple" | "teal" | "rose"
+  variant?: CardVariant
   className?: string
+}
+
+const variantStyles: Record<CardVariant, string> = {
+  indigo: "bg-[rgb(49,46,129)] hover:bg-[rgb(49,46,129)]/90",
+  purple: "bg-[rgb(88,28,135)] hover:bg-[rgb(88,28,135)]/90",
+  teal: "bg-[rgb(19,78,74)] hover:bg-[rgb(19,78,74)]/90",
+  rose: "bg-[rgb(136,19,55)] hover:bg-[rgb(136,19,55)]/90"
 }
 
 export function OverviewCard({ 
@@ -16,13 +24,6 @@ export function OverviewCard({
   variant = "indigo",
   className 
 }: OverviewCardProps) {
-  const variantStyles = {
-    indigo: "bg-[rgb(49,46,129)] hover:bg-[rgb(49,46,129)]/90",
-    purple: "bg-[rgb(88,28,135)] hover:bg-[rgb(88,28,135)]/90",
-    teal: "bg-[rgb(19,78,74)] hover:bg-[rgb(19,78,74)]/90",
-    rose: "bg-[rgb(136,19,55)] hover:bg-[rgb(136,19,55)]/90"
-  }
-
   return (
     <Card className={cn(
       "relative overflow-hidden transition-all hover:translate-y-[-2px] border-0",

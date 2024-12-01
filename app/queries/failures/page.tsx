@@ -9,6 +9,7 @@ import { FailureReasonsPieChart } from "@/components/failure-reasons-pie-chart"
 import { FailureSourcesPieChart } from "@/components/failure-sources-pie-chart"
 import { DateRangePicker } from "@/components/date-range-picker"
 import dashboard from "@/data/dashboard.json"
+import { type FailureItem } from "@/types/failures"
 
 export default function RecurringExpensiveFailures() {
   const { labels, data } = dashboard
@@ -39,7 +40,7 @@ export default function RecurringExpensiveFailures() {
         <div className="rounded-lg border bg-card p-6">
           <h2 className="text-lg font-semibold mb-4">Fix Frequent Failures</h2>
           <FailuresTable 
-            data={data.queries.failures.items} 
+            data={data.queries.failures.items as FailureItem[]} 
             labels={labels.queries.failures}
           />
         </div>

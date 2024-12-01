@@ -6,37 +6,59 @@ import { OptimizationCard } from "@/components/optimization-card"
 import { WorkloadTable } from "@/components/workload-table"
 import { TeamTable } from "@/components/team-table"
 import dashboard from "@/data/dashboard.json"
+import type { CardVariant } from "@/types/dashboard"
 
 export default function Home() {
   const { labels, data } = dashboard
 
+  const overviewCards = [
+    {
+      href: "/warehouses/underutilized",
+      title: labels.overview.warehouses.title,
+      value: data.overview.warehouses,
+      variant: labels.overview.warehouses.variant as CardVariant
+    },
+    {
+      href: "/warehouses/underutilized",
+      title: labels.overview.utilization.title,
+      value: `${data.overview.utilization}%`,
+      variant: labels.overview.utilization.variant as CardVariant
+    },
+    {
+      href: undefined,
+      title: labels.overview.totalCost.title,
+      value: `$${data.overview.totalCost.toLocaleString()}`,
+      variant: labels.overview.totalCost.variant as CardVariant
+    },
+    {
+      href: undefined,
+      title: labels.overview.savingPotential.title,
+      value: `$${data.overview.savingPotential.toLocaleString()}`,
+      variant: labels.overview.savingPotential.variant as CardVariant
+    }
+  ]
+
   return (
     <div className="container py-8 space-y-8">
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        <Link href="/warehouses/underutilized">
-          <OverviewCard 
-            title={labels.overview.warehouses.title}
-            value={data.overview.warehouses}
-            variant={labels.overview.warehouses.variant}
-          />
-        </Link>
-        <Link href="/warehouses/underutilized">
-          <OverviewCard 
-            title={labels.overview.utilization.title}
-            value={`${data.overview.utilization}%`}
-            variant={labels.overview.utilization.variant}
-          />
-        </Link>
-        <OverviewCard 
-          title={labels.overview.totalCost.title}
-          value={`$${data.overview.totalCost.toLocaleString()}`}
-          variant={labels.overview.totalCost.variant}
-        />
-        <OverviewCard 
-          title={labels.overview.savingPotential.title}
-          value={`$${data.overview.savingPotential.toLocaleString()}`}
-          variant={labels.overview.savingPotential.variant}
-        />
+        {overviewCards.map((card, index) => (
+          card.href ? (
+            <Link key={index} href={card.href}>
+              <OverviewCard 
+                title={card.title}
+                value={card.value}
+                variant={card.variant}
+              />
+            </Link>
+          ) : (
+            <OverviewCard 
+              key={index}
+              title={card.title}
+              value={card.value}
+              variant={card.variant}
+            />
+          )
+        ))}
       </div>
 
       <div>

@@ -9,28 +9,11 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { Progress } from "@/components/ui/progress"
-
-interface TableUsageData {
-  table: string
-  workloads: number
-  queries: number
-  cost: number
-  success: number
-  failure: number
-}
+import type { TableUsageData, TableUsageLabels } from "@/types/tables"
 
 interface TableUsageTableProps {
-  data: TableUsageData[]
-  labels: {
-    columns: {
-      table: string
-      workloads: string
-      queries: string
-      cost: string
-      success: string
-      failure: string
-    }
-  }
+  data: TableUsageData[];
+  labels: TableUsageLabels;
 }
 
 export function TableUsageTable({ data, labels }: TableUsageTableProps) {
