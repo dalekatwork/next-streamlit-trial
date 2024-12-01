@@ -1,21 +1,19 @@
 #!/bin/bash
 
-# Install Node.js
-curl -fsSL https://nodejs.org/dist/v16.20.2/node-v16.20.2-linux-x64.tar.xz -o node.tar.xz
-mkdir -p ~/.local/node
-tar -xJf node.tar.xz -C ~/.local/node --strip-components=1
-export PATH=$PATH:~/.local/node/bin
+# Install Node.js (if not installed in your environment already)
+curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
+apt-get install -y nodejs
 
-echo "Contents of current directory:"
-ls -al
-echo "Contents of 'out' directory:"
-ls -al out
-
-# Install and build the Next.js app
+# Install Next.js dependencies
 npm install
+
+# Build the Next.js app to generate the 'out' directory
 npm run build
 
-echo "Contents of current directory:"
-ls -al
-echo "Contents of 'out' directory:"
-ls -al out
+# Ensure the 'out' directory exists
+if [ ! -d "out" ]; then
+    echo "Error: Next.js build directory 'out' not found. Please run 'npm run build'."
+    exit 1
+else
+    echo "'out' directory exists. Build successful!"
+fi
