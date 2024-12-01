@@ -1,4 +1,5 @@
 streamlit==1.40.2
-pandas==2.2.3
-numpy==2.1.3
-altair==5.5.0
+# Your other Python dependencies
+
+# Add Node.js tools via pip (may not fully work, but useful for local builds)
+npm

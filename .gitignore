@@ -21,7 +21,6 @@ htmlcov/
 
 # Next.js
 /.next/
-/out/
 .next/
 next-env.d.ts
 
