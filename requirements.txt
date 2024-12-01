@@ -1,4 +1,3 @@
-numpy
 streamlit
-# Add Node.js installation and build steps
-!npm install && npm run build
+numpy
+# Add other Python libraries required by your app
