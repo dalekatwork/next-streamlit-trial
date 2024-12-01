@@ -1,0 +1,4 @@
+numpy
+streamlit
+# Add Node.js installation and build steps
+!npm install && npm run build

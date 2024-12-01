@@ -93,9 +93,6 @@ logs
 # Optional stylelint cache
 .stylelintcache
 
-# Streamlit
-.streamlit/
-
 # Misc
 *.pem
 .DS_Store

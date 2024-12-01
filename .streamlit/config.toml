@@ -1,0 +1,25 @@
+[theme]
+# Set the theme of the app (light or dark)
+base = "dark"
+
+# Customize theme colors
+primaryColor = "#1E90FF"
+backgroundColor = "#0a192f"
+secondaryBackgroundColor = "#1a1a1a"
+textColor = "#FFFFFF"
+font = "sans serif"
+
+[server]
+# Ensure the app runs on the correct port and host
+port = 8501
+headless = true
+enableCORS = false
+enableXsrfProtection = false
+
+[deprecation]
+# Suppress warnings for deprecated Streamlit features
+showfileUploaderEncoding = false
+
+[logging]
+# Customize logging verbosity
+level = "info"
